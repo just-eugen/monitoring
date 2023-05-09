@@ -2,12 +2,12 @@
 
 namespace monitoring.Models
 {
-    internal class Univer
+    public class Univer
     {
-        public int Id { get; set; }
+        public int UniverId { get; set; }
         public string Name { get; set; }
         public string? FullName{ get; set; }
 
-        public virtual ObservableCollectionListSource<Cathedra> Cathedra { get; } => new();
+        public virtual ObservableCollectionListSource<Cathedra> Cathedras { get; } = new();
     }
 }

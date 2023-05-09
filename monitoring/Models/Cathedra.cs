@@ -1,8 +1,10 @@
-﻿namespace monitoring.Models
+﻿using System.ComponentModel;
+
+namespace monitoring.Models
 {
-    internal class Cathedra
+    public class Cathedra
     {
-        public int Id { get; set; }
+        public int CathedraId { get; set; }
         public string Name { get; set; }
         public string? FullName { get; set; }
 
