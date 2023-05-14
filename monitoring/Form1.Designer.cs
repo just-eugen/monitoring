@@ -48,6 +48,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(TestButton);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Мониторинг";
             Load += MainForm_Load;
             ResumeLayout(false);

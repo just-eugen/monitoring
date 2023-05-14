@@ -15,8 +15,14 @@ namespace monitoring
 
         protected override void OnLoad(EventArgs e)
         {
+            AuthForm authForm = new AuthForm();
+            authForm.ShowDialog();
+
+            //AuthForm authForm = new AuthForm();
+            //authForm.ShowDialog();
+
             //base.OnLoad(e);
-            
+
             //this.monitoringContext = new MonitoringContext();
 
             // Uncomment the line below to start fresh with a new database.
@@ -40,7 +46,7 @@ namespace monitoring
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

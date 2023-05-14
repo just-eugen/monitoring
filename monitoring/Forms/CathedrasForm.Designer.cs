@@ -148,6 +148,7 @@
             Controls.Add(dataGridViewCathedras);
             Controls.Add(dataGridViewUnivers);
             Name = "CathedrasForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CathedrasForm";
             ((System.ComponentModel.ISupportInitialize)dataGridViewUnivers).EndInit();
             ((System.ComponentModel.ISupportInitialize)univerBindingSource).EndInit();
