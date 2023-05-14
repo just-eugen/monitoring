@@ -8,6 +8,14 @@ namespace monitoring.Data
         public DbSet<Univer> Univers { get; set; }
         public DbSet<Cathedra> Cathedras { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<ExperienceType> ExperienceTypes { get; set; }
+        public DbSet<Experience> Experiences { get; set; }
+        public DbSet<ContestType> ContestTypes { get; set; }
+        public DbSet<ContestRequest> ContestRequests { get; set; }
+        public DbSet<Volume> Volumes { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

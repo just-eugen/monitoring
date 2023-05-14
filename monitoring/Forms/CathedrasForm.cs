@@ -48,5 +48,13 @@ namespace monitoring.Forms
                 }
             }
         }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            this.dbContext!.SaveChanges();
+
+            this.dataGridViewUnivers.Refresh();
+            this.dataGridViewCathedras.Refresh();
+        }
     }
 }
