@@ -15,6 +15,15 @@ namespace monitoring.Data
         public DbSet<ContestType> ContestTypes { get; set; }
         public DbSet<ContestRequest> ContestRequests { get; set; }
         public DbSet<Volume> Volumes { get; set; }
+        public DbSet<ArticleType> ArticleTypes { get; set; }
+        public DbSet<AuthorType> AuthorTypes { get; set; }
+        public DbSet<EditionType> EditionTypes { get; set; }
+        public DbSet<Notation> Notations { get; set; }
+        public DbSet<StudyBookType> StudyBookTypes { get; set; }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<StudyBook> StudyBooks { get; set; }
+        public DbSet<ArticleAuthor> ArticleAuthors { get; set; }
+        public DbSet<StudyBookAuthor> StudyBookAuthors { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

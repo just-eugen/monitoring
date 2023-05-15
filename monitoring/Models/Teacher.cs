@@ -20,7 +20,9 @@ namespace monitoring.Models
         [Display(Name = "Должность")]
         public virtual Position Position { get; set; } = null!;
 
-        public virtual ObservableCollectionListSource<Experience> Experiences { get; set; } = new();
-        public virtual ObservableCollectionListSource<ContestRequest> ContestRequests { get; set; } = new();
+        public virtual ObservableCollectionListSource<Experience> Experiences { get; } = new();
+        public virtual ObservableCollectionListSource<ContestRequest> ContestRequests { get; } = new();
+        public virtual ObservableCollectionListSource<ArticleAuthor> ArticleAuthors { get; } = new();
+        public virtual ObservableCollectionListSource<StudyBookAuthor> StudyBookAuthors { get; } = new();
     }
 }

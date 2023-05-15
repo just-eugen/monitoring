@@ -56,7 +56,7 @@
             dataGridViewUnivers.Location = new Point(12, 43);
             dataGridViewUnivers.Name = "dataGridViewUnivers";
             dataGridViewUnivers.RowTemplate.Height = 25;
-            dataGridViewUnivers.Size = new Size(354, 226);
+            dataGridViewUnivers.Size = new Size(458, 306);
             dataGridViewUnivers.TabIndex = 0;
             dataGridViewUnivers.SelectionChanged += dataGridViewUnivers_SelectionChanged;
             // 
@@ -71,7 +71,7 @@
             fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
             fullNameDataGridViewTextBoxColumn.HeaderText = "Полное название";
             fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            fullNameDataGridViewTextBoxColumn.Width = 200;
+            fullNameDataGridViewTextBoxColumn.Width = 300;
             // 
             // univerBindingSource
             // 
@@ -84,10 +84,10 @@
             dataGridViewCathedras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCathedras.Columns.AddRange(new DataGridViewColumn[] { nameDataGridViewTextBoxColumn1, fullNameDataGridViewTextBoxColumn1 });
             dataGridViewCathedras.DataSource = cathedrasBindingSource;
-            dataGridViewCathedras.Location = new Point(381, 43);
+            dataGridViewCathedras.Location = new Point(476, 43);
             dataGridViewCathedras.Name = "dataGridViewCathedras";
             dataGridViewCathedras.RowTemplate.Height = 25;
-            dataGridViewCathedras.Size = new Size(355, 226);
+            dataGridViewCathedras.Size = new Size(459, 306);
             dataGridViewCathedras.TabIndex = 1;
             // 
             // nameDataGridViewTextBoxColumn1
@@ -101,7 +101,7 @@
             fullNameDataGridViewTextBoxColumn1.DataPropertyName = "FullName";
             fullNameDataGridViewTextBoxColumn1.HeaderText = "Полное название";
             fullNameDataGridViewTextBoxColumn1.Name = "fullNameDataGridViewTextBoxColumn1";
-            fullNameDataGridViewTextBoxColumn1.Width = 200;
+            fullNameDataGridViewTextBoxColumn1.Width = 300;
             // 
             // cathedrasBindingSource
             // 
@@ -111,11 +111,11 @@
             // buttonSave
             // 
             buttonSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonSave.Location = new Point(661, 275);
+            buttonSave.Location = new Point(860, 355);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(75, 23);
             buttonSave.TabIndex = 2;
-            buttonSave.Text = "Save";
+            buttonSave.Text = "Сохранить";
             buttonSave.UseVisualStyleBackColor = true;
             buttonSave.Click += buttonSave_Click;
             // 
@@ -131,7 +131,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(381, 9);
+            label2.Location = new Point(476, 9);
             label2.Name = "label2";
             label2.Size = new Size(54, 15);
             label2.TabIndex = 4;
@@ -141,7 +141,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(748, 310);
+            ClientSize = new Size(947, 390);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(buttonSave);
@@ -149,7 +149,6 @@
             Controls.Add(dataGridViewUnivers);
             Name = "CathedrasForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "CathedrasForm";
             ((System.ComponentModel.ISupportInitialize)dataGridViewUnivers).EndInit();
             ((System.ComponentModel.ISupportInitialize)univerBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCathedras).EndInit();
@@ -165,11 +164,11 @@
         private Button buttonSave;
         private BindingSource univerBindingSource;
         private BindingSource cathedrasBindingSource;
+        private Label label1;
+        private Label label2;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn1;
-        private Label label1;
-        private Label label2;
     }
 }
