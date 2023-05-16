@@ -23,9 +23,14 @@ namespace monitoring.Forms
             // this.dbContext.Database.EnsureDeleted();
             this.dbContext.Database.EnsureCreated();
 
-            this.dbContext.Univers.Load();
+            var query = from univers in dbContext.Set<Univer>()
+                        join cathedras in dbContext.Set<Cathedra>()
+                        on univers.UniverId equals cathedras.UniverId
+                        select new { Универ = univers.Name, Кафедра = cathedras.Name};
 
-            this.univerBindingSource.DataSource = dbContext.Univers.Local.ToBindingList();
+            //this.dbContext.Univers.Load();
+
+            this.dataGridViewUnivers.DataSource = query.ToList();
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -38,15 +43,16 @@ namespace monitoring.Forms
 
         private void dataGridViewUnivers_SelectionChanged(object sender, EventArgs e)
         {
-            if (this.dbContext != null)
-            {
-                var category = (Univer)this.dataGridViewUnivers.CurrentRow.DataBoundItem;
+            //if (this.dbContext != null)
+            //{
+            //    var univer = (Univer)this.dataGridViewUnivers.CurrentRow.DataBoundItem;
 
-                if (category != null)
-                {
-                    this.dbContext.Entry(category).Collection(e => e.Cathedras).Load();
-                }
-            }
+            //    if (univer != null)
+            //    {
+            //        this.dbContext.Entry(univer).Collection(e => e.Cathedras).Load();
+            //        this.dataGridViewCathedras.DataSource = univer.Cathedras;
+            //    }
+            //}
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

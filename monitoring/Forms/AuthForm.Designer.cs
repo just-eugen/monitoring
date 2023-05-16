@@ -93,7 +93,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(299, 110);
-            ControlBox = false;
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(buttonLogin);
@@ -103,6 +102,7 @@
             Name = "AuthForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Авторизация пользователя";
+            Load += AuthForm_Load;
             ((System.ComponentModel.ISupportInitialize)userBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();

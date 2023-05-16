@@ -28,31 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             dataGridViewUnivers = new DataGridView();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fullNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            univerBindingSource = new BindingSource(components);
             dataGridViewCathedras = new DataGridView();
-            nameDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            fullNameDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            cathedrasBindingSource = new BindingSource(components);
             buttonSave = new Button();
             label1 = new Label();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewUnivers).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)univerBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCathedras).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cathedrasBindingSource).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewUnivers
             // 
             dataGridViewUnivers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            dataGridViewUnivers.AutoGenerateColumns = false;
             dataGridViewUnivers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewUnivers.Columns.AddRange(new DataGridViewColumn[] { nameDataGridViewTextBoxColumn, fullNameDataGridViewTextBoxColumn });
-            dataGridViewUnivers.DataSource = univerBindingSource;
             dataGridViewUnivers.Location = new Point(12, 43);
             dataGridViewUnivers.Name = "dataGridViewUnivers";
             dataGridViewUnivers.RowTemplate.Height = 25;
@@ -60,53 +48,15 @@
             dataGridViewUnivers.TabIndex = 0;
             dataGridViewUnivers.SelectionChanged += dataGridViewUnivers_SelectionChanged;
             // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Аббревиатура";
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // fullNameDataGridViewTextBoxColumn
-            // 
-            fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
-            fullNameDataGridViewTextBoxColumn.HeaderText = "Полное название";
-            fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            fullNameDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // univerBindingSource
-            // 
-            univerBindingSource.DataSource = typeof(Models.Univer);
-            // 
             // dataGridViewCathedras
             // 
             dataGridViewCathedras.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridViewCathedras.AutoGenerateColumns = false;
             dataGridViewCathedras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCathedras.Columns.AddRange(new DataGridViewColumn[] { nameDataGridViewTextBoxColumn1, fullNameDataGridViewTextBoxColumn1 });
-            dataGridViewCathedras.DataSource = cathedrasBindingSource;
             dataGridViewCathedras.Location = new Point(476, 43);
             dataGridViewCathedras.Name = "dataGridViewCathedras";
             dataGridViewCathedras.RowTemplate.Height = 25;
             dataGridViewCathedras.Size = new Size(459, 306);
             dataGridViewCathedras.TabIndex = 1;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn1.HeaderText = "Аббревиатура";
-            nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            // 
-            // fullNameDataGridViewTextBoxColumn1
-            // 
-            fullNameDataGridViewTextBoxColumn1.DataPropertyName = "FullName";
-            fullNameDataGridViewTextBoxColumn1.HeaderText = "Полное название";
-            fullNameDataGridViewTextBoxColumn1.Name = "fullNameDataGridViewTextBoxColumn1";
-            fullNameDataGridViewTextBoxColumn1.Width = 300;
-            // 
-            // cathedrasBindingSource
-            // 
-            cathedrasBindingSource.DataMember = "Cathedras";
-            cathedrasBindingSource.DataSource = univerBindingSource;
             // 
             // buttonSave
             // 
@@ -150,9 +100,7 @@
             Name = "CathedrasForm";
             StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)dataGridViewUnivers).EndInit();
-            ((System.ComponentModel.ISupportInitialize)univerBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCathedras).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cathedrasBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -162,13 +110,7 @@
         private DataGridView dataGridViewUnivers;
         private DataGridView dataGridViewCathedras;
         private Button buttonSave;
-        private BindingSource univerBindingSource;
-        private BindingSource cathedrasBindingSource;
         private Label label1;
         private Label label2;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn1;
     }
 }

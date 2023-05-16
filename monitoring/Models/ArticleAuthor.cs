@@ -5,6 +5,7 @@ namespace monitoring.Models
 {
     internal class ArticleAuthor
     {
+        public int ArticleAuthorId { get; set; }
         public int ArticleId { get; set; }
         public int TeacherId { get; set; }
         public int AuthorTypeId { get; set; }

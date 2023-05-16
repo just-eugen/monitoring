@@ -18,6 +18,8 @@ namespace monitoring
             AuthForm authForm = new AuthForm();
             authForm.ShowDialog();
 
+            if (authForm.DialogResult == DialogResult.Cancel) this.Close();
+
             //AuthForm authForm = new AuthForm();
             //authForm.ShowDialog();
 
@@ -40,13 +42,19 @@ namespace monitoring
 
         private void TestButton_Click(object sender, EventArgs e)
         {
-            CathedrasForm cathedrasForm = new CathedrasForm();
-            cathedrasForm.ShowDialog();
+            //CathedrasForm cathedrasForm = new CathedrasForm();
+            //cathedrasForm.ShowDialog();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonTeachers_Click(object sender, EventArgs e)
+        {
+            TeachersForm teachersForm = new TeachersForm();
+            teachersForm.ShowDialog();
         }
     }
 }

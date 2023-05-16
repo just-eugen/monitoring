@@ -2,6 +2,7 @@
 {
     internal class StudyBookAuthor
     {
+        public int StudyBookAuthorId { get; set; }
         public int StudyBookId { get; set; }
         public int TeacherId { get; set; }
 

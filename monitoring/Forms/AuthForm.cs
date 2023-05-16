@@ -21,7 +21,7 @@ namespace monitoring.Forms
             this.dbContext = new MonitoringContext();
 
             // Uncomment the line below to start fresh with a new database.
-            // this.dbContext.Database.EnsureDeleted();
+            this.dbContext.Database.EnsureDeleted();
             this.dbContext.Database.EnsureCreated();
 
             this.dbContext.Users.Load();
@@ -54,6 +54,11 @@ namespace monitoring.Forms
                     MessageBox.Show("Неверный пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void AuthForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
