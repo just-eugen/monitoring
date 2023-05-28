@@ -6,7 +6,7 @@ namespace monitoring.Models
     {
         public int ExperienceId { get; set; }
         [Display(Name = "Стаж")]
-        public float Count { get; set; }
+        public double Count { get; set; }
 
         public int ExperienceTypeId { get; set; }
         public int TeacherId { get; set; }

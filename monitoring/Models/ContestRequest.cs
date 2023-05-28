@@ -8,7 +8,7 @@ namespace monitoring.Models
         [Display(Name = "Тема")]
         public string Name { get; set; }
         [Display(Name = "Стоимость проекта")]
-        public float ProjectCost { get; set; }
+        public double ProjectCost { get; set; }
         [Display(Name = "Заявка одобрена")]
         public bool ProjectApproval { get; set; }
 

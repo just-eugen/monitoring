@@ -49,10 +49,6 @@ namespace monitoring
             dataGridViewArticles.DataSource = articles.ToList();
 
             this.dataGridViewArticles.Columns[0].Visible = false;
-
-            // Uncomment the line below to start fresh with a new database.
-            // this.dbContext.Database.EnsureDeleted();
-            //this.monitoringContext.Database.EnsureCreated();
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -65,8 +61,7 @@ namespace monitoring
 
         private void TestButton_Click(object sender, EventArgs e)
         {
-            //CathedrasForm cathedrasForm = new CathedrasForm();
-            //cathedrasForm.ShowDialog();
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -85,6 +80,7 @@ namespace monitoring
             if (this.dbContext != null && dataGridViewArticles.CurrentRow != null)
             {
                 var articleId = (int)this.dataGridViewArticles.CurrentRow.Cells[0].Value;
+
                 if (articleId != 0)
                 {
                     var query = from aa in dbContext.Set<ArticleAuthor>()

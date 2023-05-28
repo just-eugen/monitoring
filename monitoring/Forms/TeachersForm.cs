@@ -21,17 +21,12 @@ namespace monitoring.Forms
 
             this.dbContext = new MonitoringContext();
 
-            // Uncomment the line below to start fresh with a new database.
-            //this.dbContext.Database.EnsureDeleted();
-            //this.dbContext.Database.EnsureCreated();
-
             this.dbContext.Positions.Load();
 
             this.dataGridViewPositions.DataSource = this.dbContext.Positions.ToList();
 
             this.dataGridViewPositions.Columns[0].Visible = false;
             this.dataGridViewPositions.Columns[1].HeaderText = "Должность";
-            this.dataGridViewPositions.Columns[1].Width = 250;
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -60,11 +55,6 @@ namespace monitoring.Forms
 
                     this.dataGridViewTeachers.Columns[0].Visible = false;
                     this.dataGridViewTeachers.Columns[5].Visible = false;
-
-                    this.dataGridViewTeachers.Columns[1].Width = 200;
-                    this.dataGridViewTeachers.Columns[2].Width = 200;
-                    this.dataGridViewTeachers.Columns[3].Width = 200;
-                    this.dataGridViewTeachers.Columns[4].Width = 200;
                 }
             }
         }
@@ -84,16 +74,126 @@ namespace monitoring.Forms
                                 select new { Стаж = ex.Count, Тип_стажа = et.Name };
 
                     this.dataGridViewExperiences.DataSource = query.ToList();
-
-                    this.dataGridViewExperiences.Columns[0].Width = 200;
-                    this.dataGridViewExperiences.Columns[1].Width = 200;
                 }
             }
         }
 
         private void toolStripButtonSearch_Click(object sender, EventArgs e)
         {
+            if (dbContext != null)
+            {
+                var query = from p in dbContext.Set<Position>()
+                            where p.Name.Contains(this.toolStripTextBoxFilterPos.Text)
+                            select p;
 
+                this.dataGridViewPositions.DataSource = query.ToList();
+            }
+        }
+
+        private void toolStripButtonAddPos_Click(object sender, EventArgs e)
+        {
+            AddPos addPos = new AddPos();
+
+            addPos.Text = "Добавление должности";
+            addPos.buttonOK.Text = "Добавить";
+            addPos.ShowDialog();
+
+            if (addPos.DialogResult == DialogResult.OK && dbContext != null)
+            {
+                this.dbContext.Positions.Add(new Position { Name = addPos.textBoxPosName.Text });
+                this.dbContext.SaveChanges();
+                this.dbContext.Positions.Load();
+
+                this.dataGridViewPositions.DataSource = this.dbContext.Positions.ToList();
+            }
+        }
+
+        private void toolStripButtonEditPos_Click(object sender, EventArgs e)
+        {
+            if (this.dbContext != null && dataGridViewPositions.DataSource != null)
+            {
+                var position = (Position)this.dataGridViewPositions.CurrentRow.DataBoundItem;
+
+                if (position != null)
+                {
+                    AddPos addPos = new AddPos();
+
+                    addPos.Text = "Редактирвание должности";
+                    addPos.buttonOK.Text = "Сохранить";
+                    addPos.textBoxPosName.Text = position.Name;
+                    addPos.ShowDialog();
+
+                    if (addPos.DialogResult == DialogResult.OK)
+                    {
+                        position.Name = addPos.textBoxPosName.Text;
+
+                        this.dbContext.Update(position);
+                        this.dbContext.SaveChanges();
+                        this.dbContext.Positions.Load();
+
+                        this.dataGridViewPositions.DataSource = this.dbContext.Positions.ToList();
+                    }
+                }
+            }
+        }
+
+        private void toolStripButtonDelPos_Click(object sender, EventArgs e)
+        {
+            var message = MessageBox.Show("Вы уверены, что хотите удалить запись?", "Внимание!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (message == DialogResult.OK && this.dbContext != null && dataGridViewPositions.DataSource != null)
+            {
+                var position = (Position)this.dataGridViewPositions.CurrentRow.DataBoundItem;
+
+                if (position != null)
+                {
+                    this.dbContext.Remove(position);
+                    this.dbContext.SaveChanges();
+                    this.dbContext.Positions.Load();
+
+                    this.dataGridViewPositions.DataSource = this.dbContext.Positions.ToList();
+                }
+            }
+        }
+
+        private void toolStripButtonAddTeacher_Click(object sender, EventArgs e)
+        {
+            if (this.dbContext != null)
+            {
+                AddTeacher addTeacher = new AddTeacher();
+                addTeacher.Text = "Добавление сотрудника";
+                addTeacher.buttonOK.Text = "Добавить";
+
+                this.dbContext.Positions.Load();
+                this.dbContext.Univers.Load();
+
+                addTeacher.comboBoxPos.DataSource = this.dbContext.Positions.ToList();
+                addTeacher.comboBoxPos.DisplayMember = "Name";
+                addTeacher.comboBoxPos.Invalidate();
+                addTeacher.comboBoxUniver.DataSource = this.dbContext.Univers.ToList();
+                addTeacher.comboBoxUniver.DisplayMember = "Name";
+                addTeacher.comboBoxUniver.Invalidate();
+
+                addTeacher.ShowDialog();
+
+                if (addTeacher.DialogResult == DialogResult.OK)
+                {
+                    var position = (Position)addTeacher.comboBoxPos.SelectedValue;
+                    var cathedra = (Cathedra)addTeacher.comboBoxCathedra.SelectedValue;
+
+                    this.dbContext.Teachers.Add(new Teacher { 
+                        Name = addTeacher.textBoxName.Text,
+                        PositionId = position.PositionId,
+                        CathedraId = cathedra.CathedraId,
+                        StudyLoad = addTeacher.textBoxStudyLoad.Text,
+                        Rate = Convert.ToDouble(addTeacher.textBoxRate.Text)
+                    });
+                    this.dbContext.SaveChanges();
+                    this.dbContext.Teachers.Load();
+
+                    this.dataGridViewTeachers.DataSource = this.dbContext.Teachers.ToList();
+                }
+            }
         }
     }
 }

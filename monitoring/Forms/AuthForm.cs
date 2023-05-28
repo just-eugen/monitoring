@@ -21,7 +21,7 @@ namespace monitoring.Forms
             this.dbContext = new MonitoringContext();
 
             // Uncomment the line below to start fresh with a new database.
-            this.dbContext.Database.EnsureDeleted();
+            // this.dbContext.Database.EnsureDeleted();
             this.dbContext.Database.EnsureCreated();
 
             this.dbContext.Users.Load();

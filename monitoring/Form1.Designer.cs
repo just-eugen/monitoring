@@ -28,44 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             menuStripMain = new MenuStrip();
             выходToolStripMenuItem = new ToolStripMenuItem();
             splitContainerMain = new SplitContainer();
+            buttonOther = new Button();
+            buttonStudyBooks = new Button();
+            buttonArticles = new Button();
+            buttonVolumes = new Button();
             buttonTeachers = new Button();
             splitContainerChild = new SplitContainer();
             dataGridViewArticles = new DataGridView();
             toolStripArticle = new ToolStrip();
-            dataGridViewAuthors = new DataGridView();
-            toolStripAuthor = new ToolStrip();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
             toolStripLabel1 = new ToolStripLabel();
             toolStripSeparator1 = new ToolStripSeparator();
             toolStripSeparator2 = new ToolStripSeparator();
-            toolStripButton1 = new ToolStripButton();
-            toolStripButton2 = new ToolStripButton();
-            toolStripButton3 = new ToolStripButton();
+            toolStripButtonAddArticle = new ToolStripButton();
+            toolStripButtonEditArticle = new ToolStripButton();
+            toolStripButtonDeleteArticle = new ToolStripButton();
+            toolStripSeparator9 = new ToolStripSeparator();
+            toolStripSeparator10 = new ToolStripSeparator();
+            toolStripTextBoxSearchArticle = new ToolStripTextBox();
+            toolStripSeparator11 = new ToolStripSeparator();
+            toolStripSeparator12 = new ToolStripSeparator();
+            toolStripButtonSearchArticle = new ToolStripButton();
+            dataGridViewAuthors = new DataGridView();
+            toolStripAuthor = new ToolStrip();
             toolStripLabel2 = new ToolStripLabel();
             toolStripSeparator3 = new ToolStripSeparator();
             toolStripSeparator4 = new ToolStripSeparator();
-            toolStripButton4 = new ToolStripButton();
-            toolStripButton5 = new ToolStripButton();
-            toolStripButton6 = new ToolStripButton();
+            toolStripButtonAddAuthor = new ToolStripButton();
+            toolStripButtonEditAuthor = new ToolStripButton();
+            toolStripButtonDeleteAuthor = new ToolStripButton();
             toolStripSeparator5 = new ToolStripSeparator();
             toolStripSeparator6 = new ToolStripSeparator();
-            toolStripTextBox1 = new ToolStripTextBox();
+            toolStripTextBoxSearchAuthor = new ToolStripTextBox();
             toolStripSeparator7 = new ToolStripSeparator();
             toolStripSeparator8 = new ToolStripSeparator();
-            toolStripButton7 = new ToolStripButton();
-            toolStripSeparator9 = new ToolStripSeparator();
-            toolStripSeparator10 = new ToolStripSeparator();
-            toolStripTextBox2 = new ToolStripTextBox();
-            toolStripSeparator11 = new ToolStripSeparator();
-            toolStripSeparator12 = new ToolStripSeparator();
-            toolStripButton8 = new ToolStripButton();
+            toolStripButtonSearchAuthor = new ToolStripButton();
             menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerMain).BeginInit();
             splitContainerMain.Panel1.SuspendLayout();
@@ -106,10 +108,10 @@
             // splitContainerMain.Panel1
             // 
             splitContainerMain.Panel1.BackColor = SystemColors.ControlDark;
-            splitContainerMain.Panel1.Controls.Add(button4);
-            splitContainerMain.Panel1.Controls.Add(button3);
-            splitContainerMain.Panel1.Controls.Add(button2);
-            splitContainerMain.Panel1.Controls.Add(button1);
+            splitContainerMain.Panel1.Controls.Add(buttonOther);
+            splitContainerMain.Panel1.Controls.Add(buttonStudyBooks);
+            splitContainerMain.Panel1.Controls.Add(buttonArticles);
+            splitContainerMain.Panel1.Controls.Add(buttonVolumes);
             splitContainerMain.Panel1.Controls.Add(buttonTeachers);
             // 
             // splitContainerMain.Panel2
@@ -119,8 +121,49 @@
             splitContainerMain.SplitterDistance = 302;
             splitContainerMain.TabIndex = 1;
             // 
+            // buttonOther
+            // 
+            buttonOther.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonOther.Location = new Point(12, 250);
+            buttonOther.Name = "buttonOther";
+            buttonOther.Size = new Size(277, 53);
+            buttonOther.TabIndex = 3;
+            buttonOther.Text = "Дополнительные данные";
+            buttonOther.UseVisualStyleBackColor = true;
+            // 
+            // buttonStudyBooks
+            // 
+            buttonStudyBooks.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonStudyBooks.Location = new Point(12, 191);
+            buttonStudyBooks.Name = "buttonStudyBooks";
+            buttonStudyBooks.Size = new Size(277, 53);
+            buttonStudyBooks.TabIndex = 2;
+            buttonStudyBooks.Text = "Учебники и сборники";
+            buttonStudyBooks.UseVisualStyleBackColor = true;
+            // 
+            // buttonArticles
+            // 
+            buttonArticles.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonArticles.Location = new Point(12, 132);
+            buttonArticles.Name = "buttonArticles";
+            buttonArticles.Size = new Size(277, 53);
+            buttonArticles.TabIndex = 2;
+            buttonArticles.Text = "Статьи и материалы конференций";
+            buttonArticles.UseVisualStyleBackColor = true;
+            // 
+            // buttonVolumes
+            // 
+            buttonVolumes.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonVolumes.Location = new Point(12, 73);
+            buttonVolumes.Name = "buttonVolumes";
+            buttonVolumes.Size = new Size(277, 53);
+            buttonVolumes.TabIndex = 1;
+            buttonVolumes.Text = "Научно-исследовательские работы";
+            buttonVolumes.UseVisualStyleBackColor = true;
+            // 
             // buttonTeachers
             // 
+            buttonTeachers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             buttonTeachers.Location = new Point(12, 14);
             buttonTeachers.Name = "buttonTeachers";
             buttonTeachers.Size = new Size(277, 53);
@@ -151,11 +194,16 @@
             // 
             // dataGridViewArticles
             // 
+            dataGridViewArticles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewArticles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewArticles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewArticles.Dock = DockStyle.Fill;
             dataGridViewArticles.ImeMode = ImeMode.NoControl;
             dataGridViewArticles.Location = new Point(0, 35);
             dataGridViewArticles.Name = "dataGridViewArticles";
+            dataGridViewArticles.ReadOnly = true;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewArticles.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewArticles.RowTemplate.Height = 25;
             dataGridViewArticles.Size = new Size(1121, 263);
             dataGridViewArticles.TabIndex = 1;
@@ -165,69 +213,12 @@
             // 
             toolStripArticle.AutoSize = false;
             toolStripArticle.BackColor = Color.LightBlue;
-            toolStripArticle.Items.AddRange(new ToolStripItem[] { toolStripLabel1, toolStripSeparator1, toolStripSeparator2, toolStripButton1, toolStripButton2, toolStripButton3, toolStripSeparator9, toolStripSeparator10, toolStripTextBox2, toolStripSeparator11, toolStripSeparator12, toolStripButton8 });
+            toolStripArticle.Items.AddRange(new ToolStripItem[] { toolStripLabel1, toolStripSeparator1, toolStripSeparator2, toolStripButtonAddArticle, toolStripButtonEditArticle, toolStripButtonDeleteArticle, toolStripSeparator9, toolStripSeparator10, toolStripTextBoxSearchArticle, toolStripSeparator11, toolStripSeparator12, toolStripButtonSearchArticle });
             toolStripArticle.Location = new Point(0, 0);
             toolStripArticle.Name = "toolStripArticle";
             toolStripArticle.Size = new Size(1121, 35);
             toolStripArticle.TabIndex = 0;
             toolStripArticle.Text = "toolStrip1";
-            // 
-            // dataGridViewAuthors
-            // 
-            dataGridViewAuthors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewAuthors.Dock = DockStyle.Fill;
-            dataGridViewAuthors.Location = new Point(0, 35);
-            dataGridViewAuthors.Name = "dataGridViewAuthors";
-            dataGridViewAuthors.RowTemplate.Height = 25;
-            dataGridViewAuthors.Size = new Size(1121, 273);
-            dataGridViewAuthors.TabIndex = 1;
-            // 
-            // toolStripAuthor
-            // 
-            toolStripAuthor.AutoSize = false;
-            toolStripAuthor.BackColor = Color.LightBlue;
-            toolStripAuthor.Items.AddRange(new ToolStripItem[] { toolStripLabel2, toolStripSeparator3, toolStripSeparator4, toolStripButton4, toolStripButton5, toolStripButton6, toolStripSeparator5, toolStripSeparator6, toolStripTextBox1, toolStripSeparator7, toolStripSeparator8, toolStripButton7 });
-            toolStripAuthor.Location = new Point(0, 0);
-            toolStripAuthor.Name = "toolStripAuthor";
-            toolStripAuthor.Size = new Size(1121, 35);
-            toolStripAuthor.TabIndex = 0;
-            toolStripAuthor.Text = "toolStrip2";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(12, 73);
-            button1.Name = "button1";
-            button1.Size = new Size(277, 53);
-            button1.TabIndex = 1;
-            button1.Text = "Научно-исследовательские работы";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(12, 132);
-            button2.Name = "button2";
-            button2.Size = new Size(277, 53);
-            button2.TabIndex = 2;
-            button2.Text = "Статьи и материалы конференций";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(12, 191);
-            button3.Name = "button3";
-            button3.Size = new Size(277, 53);
-            button3.TabIndex = 2;
-            button3.Text = "Учебники и сборники";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(12, 250);
-            button4.Name = "button4";
-            button4.Size = new Size(277, 53);
-            button4.TabIndex = 3;
-            button4.Text = "Дополнительные данные";
-            button4.UseVisualStyleBackColor = true;
             // 
             // toolStripLabel1
             // 
@@ -245,32 +236,99 @@
             toolStripSeparator2.Name = "toolStripSeparator2";
             toolStripSeparator2.Size = new Size(6, 35);
             // 
-            // toolStripButton1
+            // toolStripButtonAddArticle
             // 
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(23, 32);
-            toolStripButton1.Text = "toolStripButton1";
+            toolStripButtonAddArticle.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonAddArticle.Image = (Image)resources.GetObject("toolStripButtonAddArticle.Image");
+            toolStripButtonAddArticle.ImageTransparentColor = Color.Magenta;
+            toolStripButtonAddArticle.Name = "toolStripButtonAddArticle";
+            toolStripButtonAddArticle.Size = new Size(23, 32);
+            toolStripButtonAddArticle.Text = "toolStripButtonAddArticle";
+            toolStripButtonAddArticle.ToolTipText = "Добавить";
             // 
-            // toolStripButton2
+            // toolStripButtonEditArticle
             // 
-            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
-            toolStripButton2.ImageTransparentColor = Color.Magenta;
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(23, 32);
-            toolStripButton2.Text = "toolStripButton2";
+            toolStripButtonEditArticle.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonEditArticle.Image = (Image)resources.GetObject("toolStripButtonEditArticle.Image");
+            toolStripButtonEditArticle.ImageTransparentColor = Color.Magenta;
+            toolStripButtonEditArticle.Name = "toolStripButtonEditArticle";
+            toolStripButtonEditArticle.Size = new Size(23, 32);
+            toolStripButtonEditArticle.Text = "toolStripButtonEditArticle";
+            toolStripButtonEditArticle.ToolTipText = "Редактировать";
             // 
-            // toolStripButton3
+            // toolStripButtonDeleteArticle
             // 
-            toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
-            toolStripButton3.ImageTransparentColor = Color.Magenta;
-            toolStripButton3.Name = "toolStripButton3";
-            toolStripButton3.Size = new Size(23, 32);
-            toolStripButton3.Text = "toolStripButton3";
+            toolStripButtonDeleteArticle.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonDeleteArticle.Image = (Image)resources.GetObject("toolStripButtonDeleteArticle.Image");
+            toolStripButtonDeleteArticle.ImageTransparentColor = Color.Magenta;
+            toolStripButtonDeleteArticle.Name = "toolStripButtonDeleteArticle";
+            toolStripButtonDeleteArticle.Size = new Size(23, 32);
+            toolStripButtonDeleteArticle.Text = "toolStripButtonDeleteArticle";
+            toolStripButtonDeleteArticle.ToolTipText = "Удалить";
+            // 
+            // toolStripSeparator9
+            // 
+            toolStripSeparator9.Name = "toolStripSeparator9";
+            toolStripSeparator9.Size = new Size(6, 35);
+            // 
+            // toolStripSeparator10
+            // 
+            toolStripSeparator10.Name = "toolStripSeparator10";
+            toolStripSeparator10.Size = new Size(6, 35);
+            // 
+            // toolStripTextBoxSearchArticle
+            // 
+            toolStripTextBoxSearchArticle.Margin = new Padding(3);
+            toolStripTextBoxSearchArticle.Name = "toolStripTextBoxSearchArticle";
+            toolStripTextBoxSearchArticle.Size = new Size(100, 29);
+            // 
+            // toolStripSeparator11
+            // 
+            toolStripSeparator11.Name = "toolStripSeparator11";
+            toolStripSeparator11.Size = new Size(6, 35);
+            // 
+            // toolStripSeparator12
+            // 
+            toolStripSeparator12.Name = "toolStripSeparator12";
+            toolStripSeparator12.Size = new Size(6, 35);
+            // 
+            // toolStripButtonSearchArticle
+            // 
+            toolStripButtonSearchArticle.AutoSize = false;
+            toolStripButtonSearchArticle.BackColor = SystemColors.Control;
+            toolStripButtonSearchArticle.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButtonSearchArticle.Image = (Image)resources.GetObject("toolStripButtonSearchArticle.Image");
+            toolStripButtonSearchArticle.ImageTransparentColor = Color.Magenta;
+            toolStripButtonSearchArticle.Margin = new Padding(2);
+            toolStripButtonSearchArticle.Name = "toolStripButtonSearchArticle";
+            toolStripButtonSearchArticle.Size = new Size(46, 25);
+            toolStripButtonSearchArticle.Text = "Поиск";
+            // 
+            // dataGridViewAuthors
+            // 
+            dataGridViewAuthors.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewAuthors.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewAuthors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewAuthors.Dock = DockStyle.Fill;
+            dataGridViewAuthors.Location = new Point(0, 35);
+            dataGridViewAuthors.Name = "dataGridViewAuthors";
+            dataGridViewAuthors.ReadOnly = true;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridViewAuthors.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewAuthors.RowTemplate.Height = 25;
+            dataGridViewAuthors.Size = new Size(1121, 273);
+            dataGridViewAuthors.TabIndex = 1;
+            // 
+            // toolStripAuthor
+            // 
+            toolStripAuthor.AutoSize = false;
+            toolStripAuthor.BackColor = Color.LightBlue;
+            toolStripAuthor.Items.AddRange(new ToolStripItem[] { toolStripLabel2, toolStripSeparator3, toolStripSeparator4, toolStripButtonAddAuthor, toolStripButtonEditAuthor, toolStripButtonDeleteAuthor, toolStripSeparator5, toolStripSeparator6, toolStripTextBoxSearchAuthor, toolStripSeparator7, toolStripSeparator8, toolStripButtonSearchAuthor });
+            toolStripAuthor.Location = new Point(0, 0);
+            toolStripAuthor.Name = "toolStripAuthor";
+            toolStripAuthor.Size = new Size(1121, 35);
+            toolStripAuthor.TabIndex = 0;
+            toolStripAuthor.Text = "toolStrip2";
             // 
             // toolStripLabel2
             // 
@@ -288,32 +346,35 @@
             toolStripSeparator4.Name = "toolStripSeparator4";
             toolStripSeparator4.Size = new Size(6, 35);
             // 
-            // toolStripButton4
+            // toolStripButtonAddAuthor
             // 
-            toolStripButton4.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton4.Image = (Image)resources.GetObject("toolStripButton4.Image");
-            toolStripButton4.ImageTransparentColor = Color.Magenta;
-            toolStripButton4.Name = "toolStripButton4";
-            toolStripButton4.Size = new Size(23, 32);
-            toolStripButton4.Text = "toolStripButton4";
+            toolStripButtonAddAuthor.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonAddAuthor.Image = (Image)resources.GetObject("toolStripButtonAddAuthor.Image");
+            toolStripButtonAddAuthor.ImageTransparentColor = Color.Magenta;
+            toolStripButtonAddAuthor.Name = "toolStripButtonAddAuthor";
+            toolStripButtonAddAuthor.Size = new Size(23, 32);
+            toolStripButtonAddAuthor.Text = "toolStripButtonAddAuthor";
+            toolStripButtonAddAuthor.ToolTipText = "Добавить";
             // 
-            // toolStripButton5
+            // toolStripButtonEditAuthor
             // 
-            toolStripButton5.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton5.Image = (Image)resources.GetObject("toolStripButton5.Image");
-            toolStripButton5.ImageTransparentColor = Color.Magenta;
-            toolStripButton5.Name = "toolStripButton5";
-            toolStripButton5.Size = new Size(23, 32);
-            toolStripButton5.Text = "toolStripButton5";
+            toolStripButtonEditAuthor.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonEditAuthor.Image = (Image)resources.GetObject("toolStripButtonEditAuthor.Image");
+            toolStripButtonEditAuthor.ImageTransparentColor = Color.Magenta;
+            toolStripButtonEditAuthor.Name = "toolStripButtonEditAuthor";
+            toolStripButtonEditAuthor.Size = new Size(23, 32);
+            toolStripButtonEditAuthor.Text = "toolStripButtonEditAuthor";
+            toolStripButtonEditAuthor.ToolTipText = "Редактировать";
             // 
-            // toolStripButton6
+            // toolStripButtonDeleteAuthor
             // 
-            toolStripButton6.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton6.Image = (Image)resources.GetObject("toolStripButton6.Image");
-            toolStripButton6.ImageTransparentColor = Color.Magenta;
-            toolStripButton6.Name = "toolStripButton6";
-            toolStripButton6.Size = new Size(23, 32);
-            toolStripButton6.Text = "toolStripButton6";
+            toolStripButtonDeleteAuthor.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonDeleteAuthor.Image = (Image)resources.GetObject("toolStripButtonDeleteAuthor.Image");
+            toolStripButtonDeleteAuthor.ImageTransparentColor = Color.Magenta;
+            toolStripButtonDeleteAuthor.Name = "toolStripButtonDeleteAuthor";
+            toolStripButtonDeleteAuthor.Size = new Size(23, 32);
+            toolStripButtonDeleteAuthor.Text = "toolStripButtonDeleteAuthor";
+            toolStripButtonDeleteAuthor.ToolTipText = "Удалить";
             // 
             // toolStripSeparator5
             // 
@@ -325,11 +386,11 @@
             toolStripSeparator6.Name = "toolStripSeparator6";
             toolStripSeparator6.Size = new Size(6, 35);
             // 
-            // toolStripTextBox1
+            // toolStripTextBoxSearchAuthor
             // 
-            toolStripTextBox1.Margin = new Padding(3);
-            toolStripTextBox1.Name = "toolStripTextBox1";
-            toolStripTextBox1.Size = new Size(100, 29);
+            toolStripTextBoxSearchAuthor.Margin = new Padding(3);
+            toolStripTextBoxSearchAuthor.Name = "toolStripTextBoxSearchAuthor";
+            toolStripTextBoxSearchAuthor.Size = new Size(100, 29);
             // 
             // toolStripSeparator7
             // 
@@ -341,55 +402,17 @@
             toolStripSeparator8.Name = "toolStripSeparator8";
             toolStripSeparator8.Size = new Size(6, 35);
             // 
-            // toolStripButton7
+            // toolStripButtonSearchAuthor
             // 
-            toolStripButton7.AutoSize = false;
-            toolStripButton7.BackColor = SystemColors.Control;
-            toolStripButton7.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            toolStripButton7.Image = (Image)resources.GetObject("toolStripButton7.Image");
-            toolStripButton7.ImageTransparentColor = Color.Magenta;
-            toolStripButton7.Margin = new Padding(2);
-            toolStripButton7.Name = "toolStripButton7";
-            toolStripButton7.Size = new Size(46, 25);
-            toolStripButton7.Text = "Поиск";
-            // 
-            // toolStripSeparator9
-            // 
-            toolStripSeparator9.Name = "toolStripSeparator9";
-            toolStripSeparator9.Size = new Size(6, 35);
-            // 
-            // toolStripSeparator10
-            // 
-            toolStripSeparator10.Name = "toolStripSeparator10";
-            toolStripSeparator10.Size = new Size(6, 35);
-            // 
-            // toolStripTextBox2
-            // 
-            toolStripTextBox2.Margin = new Padding(3);
-            toolStripTextBox2.Name = "toolStripTextBox2";
-            toolStripTextBox2.Size = new Size(100, 29);
-            // 
-            // toolStripSeparator11
-            // 
-            toolStripSeparator11.Name = "toolStripSeparator11";
-            toolStripSeparator11.Size = new Size(6, 35);
-            // 
-            // toolStripSeparator12
-            // 
-            toolStripSeparator12.Name = "toolStripSeparator12";
-            toolStripSeparator12.Size = new Size(6, 35);
-            // 
-            // toolStripButton8
-            // 
-            toolStripButton8.AutoSize = false;
-            toolStripButton8.BackColor = SystemColors.Control;
-            toolStripButton8.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            toolStripButton8.Image = (Image)resources.GetObject("toolStripButton8.Image");
-            toolStripButton8.ImageTransparentColor = Color.Magenta;
-            toolStripButton8.Margin = new Padding(2);
-            toolStripButton8.Name = "toolStripButton8";
-            toolStripButton8.Size = new Size(46, 25);
-            toolStripButton8.Text = "Поиск";
+            toolStripButtonSearchAuthor.AutoSize = false;
+            toolStripButtonSearchAuthor.BackColor = SystemColors.Control;
+            toolStripButtonSearchAuthor.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButtonSearchAuthor.Image = (Image)resources.GetObject("toolStripButtonSearchAuthor.Image");
+            toolStripButtonSearchAuthor.ImageTransparentColor = Color.Magenta;
+            toolStripButtonSearchAuthor.Margin = new Padding(2);
+            toolStripButtonSearchAuthor.Name = "toolStripButtonSearchAuthor";
+            toolStripButtonSearchAuthor.Size = new Size(46, 25);
+            toolStripButtonSearchAuthor.Text = "Поиск";
             // 
             // MainForm
             // 
@@ -433,33 +456,33 @@
         private ToolStrip toolStripAuthor;
         private Button buttonTeachers;
         private ToolStripMenuItem выходToolStripMenuItem;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button buttonOther;
+        private Button buttonStudyBooks;
+        private Button buttonArticles;
+        private Button buttonVolumes;
         private ToolStripLabel toolStripLabel1;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripButton toolStripButton1;
-        private ToolStripButton toolStripButton2;
-        private ToolStripButton toolStripButton3;
+        private ToolStripButton toolStripButtonAddArticle;
+        private ToolStripButton toolStripButtonEditArticle;
+        private ToolStripButton toolStripButtonDeleteArticle;
         private ToolStripSeparator toolStripSeparator9;
         private ToolStripSeparator toolStripSeparator10;
-        private ToolStripTextBox toolStripTextBox2;
+        private ToolStripTextBox toolStripTextBoxSearchArticle;
         private ToolStripSeparator toolStripSeparator11;
         private ToolStripSeparator toolStripSeparator12;
-        private ToolStripButton toolStripButton8;
+        private ToolStripButton toolStripButtonSearchArticle;
         private ToolStripLabel toolStripLabel2;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripSeparator toolStripSeparator4;
-        private ToolStripButton toolStripButton4;
-        private ToolStripButton toolStripButton5;
-        private ToolStripButton toolStripButton6;
+        private ToolStripButton toolStripButtonAddAuthor;
+        private ToolStripButton toolStripButtonEditAuthor;
+        private ToolStripButton toolStripButtonDeleteAuthor;
         private ToolStripSeparator toolStripSeparator5;
         private ToolStripSeparator toolStripSeparator6;
-        private ToolStripTextBox toolStripTextBox1;
+        private ToolStripTextBox toolStripTextBoxSearchAuthor;
         private ToolStripSeparator toolStripSeparator7;
         private ToolStripSeparator toolStripSeparator8;
-        private ToolStripButton toolStripButton7;
+        private ToolStripButton toolStripButtonSearchAuthor;
     }
 }

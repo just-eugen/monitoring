@@ -56,7 +56,6 @@
             textBoxPass.Location = new Point(127, 41);
             textBoxPass.Name = "textBoxPass";
             textBoxPass.PasswordChar = '*';
-            textBoxPass.PlaceholderText = "password";
             textBoxPass.Size = new Size(160, 23);
             textBoxPass.TabIndex = 1;
             // 

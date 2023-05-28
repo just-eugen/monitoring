@@ -11,7 +11,7 @@ namespace monitoring.Models
         [Display(Name = "Объем учебной нагрузки")]
         public string StudyLoad { get; set; }
         [Display(Name = "Ставка")]
-        public float Rate { get; set; }
+        public double Rate { get; set; }
 
         public int CathedraId { get; set; }
         public int PositionId { get; set; }

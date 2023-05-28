@@ -10,7 +10,7 @@ namespace monitoring.Models
         public string OutData { get; set; }
         public string ISBN { get; set; }
         public string? Griffin { get; set; }
-        public float? Count { get; set; }
+        public double? Count { get; set; }
         public int? Edition { get; set; }
 
         public int? EditionTypeId { get; set; }

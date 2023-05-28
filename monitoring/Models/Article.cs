@@ -10,9 +10,9 @@ namespace monitoring.Models
         public string OutData { get; set; }
         public bool? IsPublishedInVak { get; set; }
         public bool? IsPublishedInEng { get; set; }
-        public float? Count { get; set; }
+        public double? Count { get; set; }
         public int? Edition { get; set; }
-        public float? ImpactFactor { get; set; }
+        public double? ImpactFactor { get; set; }
 
         public int EditionTypeId { get; set; }
         public virtual EditionType EditionType { get; set; } = null!;

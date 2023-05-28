@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeachersForm));
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             dataGridViewPositions = new DataGridView();
             toolStripPositions = new ToolStrip();
@@ -106,10 +109,14 @@
             // 
             // dataGridViewPositions
             // 
+            dataGridViewPositions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewPositions.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewPositions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewPositions.Dock = DockStyle.Fill;
             dataGridViewPositions.Location = new Point(0, 35);
             dataGridViewPositions.Name = "dataGridViewPositions";
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewPositions.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewPositions.RowTemplate.Height = 25;
             dataGridViewPositions.Size = new Size(306, 562);
             dataGridViewPositions.TabIndex = 1;
@@ -135,6 +142,7 @@
             toolStripButtonAddPos.Size = new Size(23, 32);
             toolStripButtonAddPos.Text = "toolStripButtonAddPos";
             toolStripButtonAddPos.ToolTipText = "Добавить";
+            toolStripButtonAddPos.Click += toolStripButtonAddPos_Click;
             // 
             // toolStripButtonEditPos
             // 
@@ -145,6 +153,7 @@
             toolStripButtonEditPos.Size = new Size(23, 32);
             toolStripButtonEditPos.Text = "toolStripButtonEditPos";
             toolStripButtonEditPos.ToolTipText = "Редактировать";
+            toolStripButtonEditPos.Click += toolStripButtonEditPos_Click;
             // 
             // toolStripButtonDelPos
             // 
@@ -155,6 +164,7 @@
             toolStripButtonDelPos.Size = new Size(23, 32);
             toolStripButtonDelPos.Text = "toolStripButtonDelPos";
             toolStripButtonDelPos.ToolTipText = "Удалить";
+            toolStripButtonDelPos.Click += toolStripButtonDelPos_Click;
             // 
             // toolStripSeparator1
             // 
@@ -218,10 +228,14 @@
             // 
             // dataGridViewTeachers
             // 
+            dataGridViewTeachers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewTeachers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewTeachers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewTeachers.Dock = DockStyle.Fill;
             dataGridViewTeachers.Location = new Point(0, 35);
             dataGridViewTeachers.Name = "dataGridViewTeachers";
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridViewTeachers.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewTeachers.RowTemplate.Height = 25;
             dataGridViewTeachers.Size = new Size(844, 258);
             dataGridViewTeachers.TabIndex = 1;
@@ -263,6 +277,7 @@
             toolStripButtonAddTeacher.Size = new Size(23, 32);
             toolStripButtonAddTeacher.Text = "toolStripButtonAddTeacher";
             toolStripButtonAddTeacher.ToolTipText = "Добавить";
+            toolStripButtonAddTeacher.Click += toolStripButtonAddTeacher_Click;
             // 
             // toolStripButtonEditTeacher
             // 
@@ -324,10 +339,14 @@
             // 
             // dataGridViewExperiences
             // 
+            dataGridViewExperiences.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewExperiences.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewExperiences.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewExperiences.Dock = DockStyle.Fill;
             dataGridViewExperiences.Location = new Point(0, 35);
             dataGridViewExperiences.Name = "dataGridViewExperiences";
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridViewExperiences.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewExperiences.RowTemplate.Height = 25;
             dataGridViewExperiences.Size = new Size(844, 265);
             dataGridViewExperiences.TabIndex = 1;
